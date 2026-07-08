@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>Tagesbericht</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <h1>Tagesbericht</h1>
+  <p><a href="/">&larr; Zurück zur Kasse</a></p>
+
+  <form id="date-form">
+    <label>
+      Datum
+      <input type="date" id="date-input">
+    </label>
+    <button type="submit">Anzeigen</button>
+  </form>
+
+  <section>
+    <p>Datum: <strong id="report-date">-</strong></p>
+    <p>Anzahl Verkäufe: <strong id="report-count">-</strong></p>
+    <p>Umsatz: <strong id="report-total">-</strong></p>
+    <p id="message"></p>
+  </section>
+
+  <script src="/static/report.js"></script>
+</body>
+</html>

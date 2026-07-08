@@ -22,5 +22,31 @@ def init_db() -> None:
         )
         """
     )
+    connection.execute(
+        """
+        CREATE TABLE IF NOT EXISTS products (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            name TEXT NOT NULL,
+            price REAL NOT NULL
+        )
+        """
+    )
+
+    # Beim allerersten Start ist die Tabelle leer. Damit die App danach
+    # genauso aussieht wie vorher (mit den bisherigen Beispielprodukten),
+    # fuellen wir sie einmalig.
+    product_count = connection.execute("SELECT COUNT(*) FROM products").fetchone()[0]
+    if product_count == 0:
+        connection.executemany(
+            "INSERT INTO products (name, price) VALUES (?, ?)",
+            [
+                ("Kaffee", 2.50),
+                ("Brötchen", 1.20),
+                ("Wasser 0,5l", 1.00),
+                ("Schokoriegel", 1.50),
+                ("Apfel", 0.60),
+            ],
+        )
+
     connection.commit()
     connection.close()

@@ -67,7 +67,9 @@ async function checkout() {
 
   const result = await response.json();
   message.style.color = "green";
-  message.textContent = `Verkauf gespeichert. Summe: ${result.total.toFixed(2)} €`;
+  message.innerHTML =
+    `Verkauf gespeichert. Summe: ${result.total.toFixed(2)} € - ` +
+    `<a href="/api/sale/${result.id}/receipt" target="_blank">Beleg (PDF) herunterladen</a>`;
 
   cart.clear();
   renderCart();

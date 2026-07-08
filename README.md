@@ -7,10 +7,13 @@ zum Fachinformatiker Systemintegration.
 
 ```mermaid
 graph LR
-    A[Browser] --> B[Kassen-App - FastAPI]
+    A[Browser] -->|Artikel, Verkauf, Bericht| B[Kassen-App - FastAPI]
     B --> C[(Datenbank - SQLite)]
+    B -->|nach Verkauf| D[PDF-Kassenbon - fpdf2]
+    D -->|Download| A
 ```
 
 ## Fortschritt
 
 - [Woche 1 – Die Kasse läuft](docs/woche-01.md)
+- [Woche 2 – Artikelverwaltung, Tagesbericht und Kassenbon](docs/woche-02.md)
