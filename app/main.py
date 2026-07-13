@@ -43,6 +43,13 @@ class ProductIn(BaseModel):
     name: str
     price: float
 
+class TicketIn(BaseModel):
+    title: str
+    description: str
+    priority: str
+
+class TicketStatusUpdate(BaseModel):
+    status: str
 
 @app.get("/")
 def read_index() -> FileResponse:
@@ -58,6 +65,9 @@ def read_articles_page() -> FileResponse:
 def read_report_page() -> FileResponse:
     return FileResponse(f"{STATIC_DIR}/report.html")
 
+@app.get("/tickets")
+def read_tickets_page() -> FileResponse:
+    return FileResponse(f"{STATIC_DIR}/tickets.html")
 
 @app.get("/api/products")
 def get_products() -> list[dict]:
@@ -205,3 +215,58 @@ def get_report(date: str | None = None) -> dict:
     connection.close()
 
     return {"date": report_date, "count": row["count"], "total": round(row["total"], 2)}
+@app.get("/api/tickets")
+def get_tickets() -> list[dict]:
+    connection = get_connection()
+    rows = connection.execute(
+        "SELECT id, created_at, title, description, priority, status FROM tickets ORDER BY id DESC"
+    ).fetchall()
+    connection.close()
+    return [dict(row) for row in rows]
+
+
+@app.post("/api/tickets")
+def create_ticket(ticket: TicketIn) -> dict:
+    if not ticket.title.strip():
+        raise HTTPException(status_code=400, detail="Titel darf nicht leer sein")
+    if ticket.priority not in ("niedrig", "mittel", "hoch"):
+        raise HTTPException(status_code=400, detail="Priorität muss niedrig, mittel oder hoch sein")
+
+    created_at = datetime.now(timezone.utc).isoformat()
+    connection = get_connection()
+    cursor = connection.execute(
+        "INSERT INTO tickets (created_at, title, description, priority, status) VALUES (?, ?, ?, ?, 'offen')",
+        (created_at, ticket.title.strip(), ticket.description.strip(), ticket.priority),
+    )
+    connection.commit()
+    new_id = cursor.lastrowid
+    connection.close()
+
+    return {
+        "id": new_id,
+        "created_at": created_at,
+        "title": ticket.title.strip(),
+        "description": ticket.description.strip(),
+        "priority": ticket.priority,
+        "status": "offen",
+    }
+
+
+@app.put("/api/tickets/{ticket_id}")
+def update_ticket_status(ticket_id: int, update: TicketStatusUpdate) -> dict:
+    if update.status not in ("offen", "in Bearbeitung", "gelöst"):
+        raise HTTPException(status_code=400, detail="Status muss offen, in Bearbeitung oder gelöst sein")
+
+    connection = get_connection()
+    cursor = connection.execute(
+        "UPDATE tickets SET status = ? WHERE id = ?",
+        (update.status, ticket_id),
+    )
+    connection.commit()
+    updated = cursor.rowcount
+    connection.close()
+
+    if updated == 0:
+        raise HTTPException(status_code=404, detail="Ticket nicht gefunden")
+
+    return {"id": ticket_id, "status": update.status}

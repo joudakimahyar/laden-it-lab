@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>Helpdesk – Tickets</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <h1>Helpdesk – Tickets</h1>
+
+    <nav>
+        <a href="/">Kasse</a> |
+        <a href="/artikel">Artikel</a> |
+        <a href="/bericht">Bericht</a> |
+        <a href="/tickets">Tickets</a>
+    </nav>
+
+    <h2>Neues Ticket melden</h2>
+    <form id="ticket-form">
+        <input type="text" id="title" placeholder="Titel (z. B. Kasse Nr. 2 druckt nicht)" required>
+        <textarea id="description" placeholder="Beschreibung des Problems" required></textarea>
+        <select id="priority">
+            <option value="niedrig">Niedrig</option>
+            <option value="mittel" selected>Mittel</option>
+            <option value="hoch">Hoch</option>
+        </select>
+        <button type="submit">Ticket erstellen</button>
+    </form>
+
+    <p id="message"></p>
+
+    <h2>Alle Tickets</h2>
+    <ul id="ticket-list"></ul>
+
+    <script src="/static/tickets.js"></script>
+</body>
+</html>

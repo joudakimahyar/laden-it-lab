@@ -32,6 +32,18 @@ def init_db() -> None:
         """
     )
 
+    connection.execute(
+        """
+        CREATE TABLE IF NOT EXISTS tickets (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            created_at TEXT NOT NULL,
+            title TEXT NOT NULL,
+            description TEXT NOT NULL,
+            priority TEXT NOT NULL,
+            status TEXT NOT NULL DEFAULT 'offen'
+        )
+        """
+    )
     # Beim allerersten Start ist die Tabelle leer. Damit die App danach
     # genauso aussieht wie vorher (mit den bisherigen Beispielprodukten),
     # fuellen wir sie einmalig.
