@@ -173,6 +173,10 @@ Systemintegration in diesem Projekt.
 | 5 | Helpdesk & Ticket-System (ITIL) | [woche-05.md](docs/woche-05.md) |
 | 6 | Windows Server, Active Directory & Client-Join | [woche-06.md](docs/woche-06.md) |
 | 7 | Backup-Automatisierung & Monitoring (Uptime Kuma) | [woche-07.md](docs/woche-07.md) |
+| 8 | Windows-Client als Kassen-Arbeitsplatz & Abschluss-Dokumentation | [woche-08.md](docs/woche-08.md) |
+
+Ein wiederholbares Runbook für die wichtigsten Abläufe (neue Kasse
+einrichten, Backup zurückspielen) findet sich in [docs/runbook.md](docs/runbook.md).
 
 ## 🖼️ Visuelle Eindrücke
 
