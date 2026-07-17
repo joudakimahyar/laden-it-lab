@@ -1,4 +1,4 @@
-# WOCHE 5 – Helpdesk & Tickets (ITIL)
+# SCHRITT 5 – Helpdesk & Tickets (ITIL)
 
 **Ziel:** Ein einfaches Ticket-System in die Kassen-App einbauen, um IT-Probleme zu melden und zu verfolgen.
 
@@ -26,4 +26,4 @@ flowchart LR
 **Problem & Lösung:**
 Nach dem Hinzufügen der neuen `tickets`-Tabelle in `database.py` startete der Dienst nicht mehr (IndentationError). Mit `sudo journalctl -u kasse` habe ich die genaue Zeile gefunden: eine `connection.execute(`-Zeile hatte keine Einrückung. Nach dem Korrigieren der Einrückung lief der Dienst wieder fehlerfrei.
 
-**Nächster Schritt:** Woche 6 – Windows Server & Active Directory: eine zentrale Nutzerverwaltung für das "Ladenpersonal" einrichten.
+**Nächster Schritt:** Schritt 6 – Windows Server & Active Directory: eine zentrale Nutzerverwaltung für das "Ladenpersonal" einrichten.

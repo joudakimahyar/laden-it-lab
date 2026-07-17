@@ -1,4 +1,4 @@
-# WOCHE 6 – Windows Server & Active Directory
+# SCHRITT 6 – Windows Server & Active Directory
 
 **Ziel:** Eine zentrale Benutzerverwaltung mit Active Directory einrichten, sodass ein Kassierer-Konto von einem separaten Client-PC aus einloggen kann.
 
@@ -10,7 +10,7 @@
 - Client erfolgreich der Domäne `laden.local` hinzugefügt (Add-Computer)
 - Erfolgreicher Login als `LADEN\sara` auf dem Client-PC, inkl. erzwungener Passwortänderung beim ersten Login
 
-**Screenshot/Demo:** siehe bilder/woche6-vm-details.png, bilder/woche6-server-ip-config.png, bilder/woche6-server-dns-verify.png, bilder/woche6-dns-test.png, bilder/woche6-domain-join.png, bilder/woche6-sara-login.png
+**Screenshot/Demo:** siehe bilder/schritt6-vm-details.png, bilder/schritt6-server-ip-config.png, bilder/schritt6-server-dns-verify.png, bilder/schritt6-dns-test.png, bilder/schritt6-domain-join.png, bilder/schritt6-sara-login.png
 
 **Architektur:** siehe aktualisiertes Diagramm im README (Server, Client und AD als neue Bausteine)
 
@@ -23,4 +23,4 @@
 **Problem & Lösung:**
 Windows Server war als Server Core (ohne Desktop) installiert, daher gab es keinen Explorer und keine grafische Oberfläche für Shared Clipboard/Guest Additions. Alle Konfigurationsschritte (IP, DNS, AD, Domain-Join) wurden stattdessen komplett über PowerShell erledigt. Zusätzlich sorgte die deutsche Tastaturbelegung in der VM für vertippte Sonderzeichen (z. B. `$` wurde zu `§`, `_` zu `-`); Lösung war, Befehle möglichst ohne Sonderzeichen zu schreiben und Tippfehler genau zu prüfen.
 
-**Nächster Schritt:** Woche 7 – Backup der Kassendatenbank automatisieren und ein einfaches Monitoring (Uptime Kuma) einrichten.
+**Nächster Schritt:** Schritt 7 – Backup der Kassendatenbank automatisieren und ein einfaches Monitoring (Uptime Kuma) einrichten.

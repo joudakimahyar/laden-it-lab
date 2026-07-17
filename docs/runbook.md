@@ -42,7 +42,7 @@ Kassierer versehentlich Admin-Rechte hat.
 4. Testen: Doppelklick auf die Verknüpfung öffnet den Standardbrowser direkt
    auf der Kassen-Startseite. Falls das nicht klappt, prüfen, ob der
    DNS-A-Record für `kasse` auf dem Windows Server existiert und auf die
-   richtige IP des Ubuntu-Servers zeigt (siehe Woche 8, Problem & Lösung).
+   richtige IP des Ubuntu-Servers zeigt (siehe Schritt 8, Problem & Lösung).
 
 ### 3. Eingeschränkten Benutzer erstellen
 
@@ -71,7 +71,7 @@ Least Privilege).
 ## b) Backup zurückspielen
 
 Ziel: Die Kassen-Datenbank (`kasse.db`) im Notfall aus einem der
-automatisch erstellten Backups wiederherstellen (Backups werden laut Woche 7
+automatisch erstellten Backups wiederherstellen (Backups werden laut Schritt 7
 täglich per Cron-Job in `/home/mahyar/laden-it-lab/backups/` abgelegt, siehe
 `backup.sh`).
 
@@ -105,7 +105,7 @@ täglich per Cron-Job in `/home/mahyar/laden-it-lab/backups/` abgelegt, siehe
 6. Im Browser (`http://kasse.laden.local:8000`) prüfen, ob die
    wiederhergestellten Daten (Artikel, Verkäufe) wie erwartet vorhanden sind.
 
-**Hinweis:** Dieser Ablauf wurde bereits in Woche 7 als Restore-Test
+**Hinweis:** Dieser Ablauf wurde bereits in Schritt 7 als Restore-Test
 durchgeführt (Datenbank absichtlich beschädigt und erfolgreich aus einem
 Backup wiederhergestellt) — dieses Runbook beschreibt genau diesen Ablauf
 für den echten Ernstfall.

@@ -1,4 +1,4 @@
-# WOCHE 3 – Die Kasse läuft auf einem Server
+# SCHRITT 3 – Die Kasse läuft auf einem Server
 
 **Ziel:** Die Kassen-App vom eigenen PC auf einen echten Linux-Server bringen, sodass sie dauerhaft und unabhängig läuft.
 
@@ -27,4 +27,4 @@ flowchart LR
 **Problem & Lösung:**
 Beim Einrichten des Port Forwarding für die Kassen-App habe ich aus Versehen "800" statt "8000" als Guest Port eingetragen. Die App lief auf dem Server, war aber vom Browser aus nicht erreichbar. Durch genaues Vergleichen der Portnummern in der VirtualBox-Regel habe ich den Tippfehler gefunden und korrigiert – danach funktionierte der Zugriff sofort.
 
-**Nächster Schritt:** Woche 4 – Netzwerk-Grundlagen vertiefen: feste IP für den Server, Firewall-Regeln und einen Namen (DNS) statt der IP-Adresse einrichten.
+**Nächster Schritt:** Schritt 4 – Netzwerk-Grundlagen vertiefen: feste IP für den Server, Firewall-Regeln und einen Namen (DNS) statt der IP-Adresse einrichten.

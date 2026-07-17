@@ -1,4 +1,4 @@
-# WOCHE 4 – Netzwerk, Ports & Namen (DNS)
+# SCHRITT 4 – Netzwerk, Ports & Namen (DNS)
 
 **Ziel:** Verstehen, wie Geräte sich im Netzwerk finden, und die Kasse über einen Namen statt einer IP-Adresse erreichen.
 
@@ -26,4 +26,4 @@ flowchart LR
 - Wie man mit UFW eine einfache Firewall einrichtet und nur bestimmte Ports freigibt
 - Wie die Windows-hosts-Datei genutzt wird, um lokale Namen aufzulösen
 
-**Nächster Schritt:** Woche 5 – Helpdesk & Tickets: ein einfaches Ticket-System nach ITIL-Grundlagen in die Kassen-App einbauen.
+**Nächster Schritt:** Schritt 5 – Helpdesk & Tickets: ein einfaches Ticket-System nach ITIL-Grundlagen in die Kassen-App einbauen.

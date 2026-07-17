@@ -17,7 +17,7 @@ eigenen Rechner über einen produktiv betriebenen Linux-Server mit Firewall
 und DNS-Namen, ein Helpdesk-System, eine Windows-Domäne mit Active Directory
 und Client-Join, bis hin zu automatisierten Backups und Monitoring.
 
-Jede Woche ist dokumentiert (siehe [Fortschritt](#-fortschritt)) — inklusive
+Jeder Schritt ist dokumentiert (siehe [Fortschritt](#-fortschritt)) — inklusive
 der Probleme, die aufgetreten sind, und wie ich sie gelöst habe. Genau dieser
 Prozess des **Fehler machen → verstehen → lösen** ist für mich der
 eigentliche Lerninhalt dieses Projekts.
@@ -164,16 +164,16 @@ Systemintegration in diesem Projekt.
 
 ## 📅 Fortschritt
 
-| Woche | Thema | Bericht |
+| Schritt | Thema | Bericht |
 |---|---|---|
-| 1 | Die Kasse läuft (FastAPI-Grundlagen) | [woche-01.md](docs/woche-01.md) |
-| 2 | Artikelverwaltung, Tagesbericht, PDF-Kassenbon | [woche-02.md](docs/woche-02.md) |
-| 3 | Kasse läuft auf einem echten Linux-Server | [woche-03.md](docs/woche-03.md) |
-| 4 | Feste IP, Firewall (UFW) und DNS-Name | [woche-04.md](docs/woche-04.md) |
-| 5 | Helpdesk & Ticket-System (ITIL) | [woche-05.md](docs/woche-05.md) |
-| 6 | Windows Server, Active Directory & Client-Join | [woche-06.md](docs/woche-06.md) |
-| 7 | Backup-Automatisierung & Monitoring (Uptime Kuma) | [woche-07.md](docs/woche-07.md) |
-| 8 | Windows-Client als Kassen-Arbeitsplatz & Abschluss-Dokumentation | [woche-08.md](docs/woche-08.md) |
+| 1 | Die Kasse läuft (FastAPI-Grundlagen) | [schritt-01.md](docs/schritt-01.md) |
+| 2 | Artikelverwaltung, Tagesbericht, PDF-Kassenbon | [schritt-02.md](docs/schritt-02.md) |
+| 3 | Kasse läuft auf einem echten Linux-Server | [schritt-03.md](docs/schritt-03.md) |
+| 4 | Feste IP, Firewall (UFW) und DNS-Name | [schritt-04.md](docs/schritt-04.md) |
+| 5 | Helpdesk & Ticket-System (ITIL) | [schritt-05.md](docs/schritt-05.md) |
+| 6 | Windows Server, Active Directory & Client-Join | [schritt-06.md](docs/schritt-06.md) |
+| 7 | Backup-Automatisierung & Monitoring (Uptime Kuma) | [schritt-07.md](docs/schritt-07.md) |
+| 8 | Windows-Client als Kassen-Arbeitsplatz & Abschluss-Dokumentation | [schritt-08.md](docs/schritt-08.md) |
 
 Ein wiederholbares Runbook für die wichtigsten Abläufe (neue Kasse
 einrichten, Backup zurückspielen) findet sich in [docs/runbook.md](docs/runbook.md).
@@ -181,11 +181,11 @@ einrichten, Backup zurückspielen) findet sich in [docs/runbook.md](docs/runbook
 ## 🖼️ Visuelle Eindrücke
 
 <p align="center">
-  <img src="bilder/woche4-firewall.png" alt="Firewall-Konfiguration (UFW) auf dem Ubuntu-Server" width="420">
-  <img src="bilder/woche6-sara-login.png" alt="Login als Active-Directory-Benutzerin am Windows-Client" width="420">
+  <img src="bilder/schritt4-firewall.png" alt="Firewall-Konfiguration (UFW) auf dem Ubuntu-Server" width="420">
+  <img src="bilder/schritt6-sara-login.png" alt="Login als Active-Directory-Benutzerin am Windows-Client" width="420">
 </p>
 
 <p align="center">
-  <img src="bilder/woche7-monitoring-success.png" alt="Uptime Kuma Monitoring meldet die Kassen-App als erreichbar" width="420">
-  <img src="bilder/woche6-domain-join.png" alt="Windows-Client erfolgreich der Domäne laden.local beigetreten" width="420">
+  <img src="bilder/schritt7-monitoring-success.png" alt="Uptime Kuma Monitoring meldet die Kassen-App als erreichbar" width="420">
+  <img src="bilder/schritt6-domain-join.png" alt="Windows-Client erfolgreich der Domäne laden.local beigetreten" width="420">
 </p>
